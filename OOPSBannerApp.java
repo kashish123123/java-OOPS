@@ -1,29 +1,26 @@
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
+        System.out.println("--- OOPS Banner (UC4: Arrays & Loops) ---");
+        renderBanner();
+    }
 
-        // Each line represents one row of the banner
-        // Letters: O   O   P   S
+    public static void renderBanner() {
+        String gap = "    "; 
+        
+        // Initializing a String array to hold the 5 rows of the banner
+        String[] bannerRows = new String[5];
 
-        System.out.println(String.join(" ",
-                " *** ", " *** ", " **** ", " **** "));
+        // Populating the array using String.join (leveraging UC3 logic)
+        bannerRows[0] = String.join(gap, " *** ", " *** ", "**** ", " **** ");
+        bannerRows[1] = String.join(gap, " * * ", " * * ", "*  * ", " *    ");
+        bannerRows[2] = String.join(gap, " * * ", " * * ", "**** ", "  *** ");
+        bannerRows[3] = String.join(gap, " * * ", " * * ", "*    ", "    * ");
+        bannerRows[4] = String.join(gap, " *** ", " *** ", "*    ", " **** ");
 
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*     "));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*     "));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "**** ", " *** "));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*     ", "    *"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*     ", "    *"));
-
-        System.out.println(String.join(" ",
-                " *** ", " *** ", "*     ", "**** "));
+        // Using an enhanced for-loop for clean output traversal
+        for (String row : bannerRows) {
+            System.out.println(row);
+        }
     }
 }
