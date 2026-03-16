@@ -1,25 +1,47 @@
- public class OOPSBannerApp {
+public class OOPSBannerApp {
 
-    public static void main(String[] args) {
-        System.out.println("--- OOPS Banner (UC5: Compact Initialization) ---");
-        renderBanner();
+
+    // Static method to create O
+    public static String[] createO() {
+        return new String[]{
+            " *** ",
+            "*   *",
+            "*   *",
+            "*   *",
+            " *** "
+        };
     }
 
-    public static void renderBanner() {
-        String gap = "    "; 
-
-        // Combining declaration, allocation, and initialization in one statement
-        String[] bannerRows = {
-            String.join(gap, " *** ", " *** ", " **** ", " **** "),
-            String.join(gap, " * * ", " * * ", " *  *  ", " *    "),
-            String.join(gap, " * * ", " * * ", " **** ", " ***  "),
-            String.join(gap, " * * ", " * * ", " *    ", "    * "),
-            String.join(gap, " *** ", " *** ", " *    ", " **** ")
+    // Static method to create P
+    public static String[] createP() {
+        return new String[]{
+            "**** ",
+            "*   *",
+            "**** ",
+            "*    ",
+            "*    "
         };
+    }
 
-        // Efficient traversal using the enhanced for-loop
-        for (String row : bannerRows) {
-            System.out.println(row);
+    // Static method to create S
+    public static String[] createS() {
+        return new String[]{
+            " ****",
+            "*    ",
+            " *** ",
+            "    *",
+            "**** "
+        };
+    }
+
+    public static void main(String[] args) {
+
+        String[] O = createO();
+        String[] P = createP();
+        String[] S = createS();
+
+        for (int i = 0; i < O.length; i++) {
+            System.out.println(O[i] + "  " + O[i] + "  " + P[i] + "  " + S[i]);
         }
     }
 }
